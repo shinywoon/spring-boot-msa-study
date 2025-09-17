@@ -1,0 +1,16 @@
+
+server:
+  port: 0 # random port
+
+spring:
+  application:
+    name: user-service
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    allow-redirects: true # redirect to eureka server
+    fetch-registry: true # fetch registry from eureka server
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ # eureka server address
+
