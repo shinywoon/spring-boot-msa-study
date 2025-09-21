@@ -14,10 +14,29 @@ spring:
               uri: http://localhost:8081
               predicates:
                 - Path=/first-service/**
+              filters:
+                #- AddRequestHeader=f-request,hello request
+                #- AddResponseHeader=f-response,hello response
+                - CustomFilter
             - id : second-service
               uri: http://localhost:8082
               predicates:
                 - Path=/second-service/**
+              filters:
+                  #- AddRequestHeader=s-request,hello request
+                  #- AddResponseHeader=s-response,hello response
+                  - CustomFilter
+                  - name : LoggingFilter
+                    args:
+                      baseMessage: "Logging Filter for second service"
+                      preLogger: true
+                      postLogger: true
+          default-filters:
+            - name: GlobalFilter
+              args:
+                baseMessage: "This is a global filter"
+                preLogger: true
+                postLogger: true
 eureka:
   client:
     register-with-eureka: true
