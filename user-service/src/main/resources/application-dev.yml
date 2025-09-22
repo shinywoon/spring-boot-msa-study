@@ -12,20 +12,18 @@ spring:
       path: /h2-console
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;
+    url: jdbc:h2:mem:testdb
     username: sa
     password:
   jpa:
     hibernate:
       ddl-auto: update
-  security:
-    user:
-      name: user
-      password : $2a$10$8aaOaalNXL3rLoFwGtBYge4DwhA5Ida81UW12VIJ6XnbGxkU3heOK
 
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  #    prefer-ip-address: true
+  #    ip-address: ${server.address}
   client:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
@@ -33,4 +31,4 @@ eureka:
     register-with-eureka: true
 
 greeting:
-  message: Welcome to the Simple E-commerce - 2nd.
+  message: Welcome to the Simple E-commerce.
