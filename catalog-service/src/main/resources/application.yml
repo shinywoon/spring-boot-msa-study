@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: user-service
+    name: catalog-service
   h2:
     console:
       enabled: true
@@ -17,11 +17,10 @@ spring:
     password:
   jpa:
     hibernate:
-      ddl-auto: update
-  security:
-    user:
-      name: user
-      password : $2a$10$8aaOaalNXL3rLoFwGtBYge4DwhA5Ida81UW12VIJ6XnbGxkU3heOK
+      ddl-auto: create-drop
+    show-sql: true
+    database: h2
+    defer-datasource-initialization: true
 
 eureka:
   instance:
@@ -31,6 +30,3 @@ eureka:
       defaultZone: http://127.0.0.1:8761/eureka
     fetch-registry: true
     register-with-eureka: true
-
-greeting:
-  message: Welcome to the Simple E-commerce - 2nd.

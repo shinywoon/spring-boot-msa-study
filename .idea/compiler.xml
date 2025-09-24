@@ -17,6 +17,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
         </processorPath>
         <module name="apigateway-service" />
       </profile>
@@ -29,12 +30,24 @@
         </processorPath>
         <module name="user-service" />
       </profile>
+      <profile name="Annotation profile for order-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
+        </processorPath>
+        <module name="order-service" />
+        <module name="catalog-service" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="apigateway-service" options="-parameters" />
+      <module name="catalog-service" options="-parameters" />
       <module name="first-service" options="-parameters" />
+      <module name="order-service" options="-parameters" />
       <module name="second-service" options="-parameters" />
       <module name="service-discovery" options="-parameters" />
       <module name="user-service" options="-parameters" />
