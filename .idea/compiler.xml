@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="first-service" />
+        <module name="config-service" />
         <module name="second-service" />
         <module name="service-discovery" />
       </profile>
@@ -45,6 +46,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="apigateway-service" options="-parameters" />
       <module name="catalog-service" options="-parameters" />
+      <module name="config-service" options="-parameters" />
       <module name="first-service" options="-parameters" />
       <module name="order-service" options="-parameters" />
       <module name="second-service" options="-parameters" />
