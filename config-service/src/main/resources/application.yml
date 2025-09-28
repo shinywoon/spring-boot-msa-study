@@ -16,3 +16,14 @@ spring:
           default-label: master
 #          username: [username]
 #          password: [password]
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - refresh
+          - health
+          - beans
+          - info
+          - busrefresh
