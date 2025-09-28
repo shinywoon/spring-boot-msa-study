@@ -32,3 +32,14 @@ eureka:
 
 greeting:
   message: Welcome to the Simple E-commerce. (dev profile)
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include:
+            - refresh
+            - health
+            - beans
+            - info
+            - busrefresh
