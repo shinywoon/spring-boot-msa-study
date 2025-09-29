@@ -35,7 +35,6 @@ spring:
               filters:
                 - RemoveRequestHeader=Cookie
                 - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-                - LoggingFilter
             - id: user-service-login
               uri: lb://USER-SERVICE
               predicates:
@@ -44,7 +43,6 @@ spring:
               filters:
                 - RemoveRequestHeader=Cookie
                 - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-                - LoggingFilter
             - id: user-service
               uri: lb://USER-SERVICE
               predicates:
